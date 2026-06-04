@@ -41,9 +41,6 @@ Enroll at least 2 Windows test machines in VirtualBox and try enrolling them in 
 * Access to the Microsoft Intune Admin Center.
 
 
-
-
-
 ## Licensing
 
 Ensure users are assigned one of the following licenses:
@@ -308,85 +305,178 @@ After implementation:
 
 
 
+# Microsoft Intune Policy Roadmap
 
+## Purpose
+This roadmap outlines the phased implementation of Microsoft Intune policies to establish a secure and manageable Windows device environment. The objective is to achieve a baseline security posture while minimizing operational impact and ensuring a positive user experience.
 
+---
 
+# Phase 1 – Foundation and Device Enrollment
 
+## Objective
+Establish centralized device management and ensure all corporate devices are enrolled in Microsoft Intune.
 
+### Deliverables
+* Microsoft Intune tenant configuration
+* Microsoft Entra ID integration
+* Device enrollment process established
+* Corporate Windows devices enrolled in Intune
+* Device inventory and asset visibility
 
-
-
-
-
-
-
-
-
-
-
-The Windows Device Configuration Profile establishes a baseline security configuration for all corporate Windows devices managed through Microsoft Intune. The profile is designed to enforce essential security controls, protect organizational data, and ensure compliance with internal security requirements.
-
-## Profile Information
-
-| Attribute           | Value                                  |
-| ------------------- | -------------------------------------- |
-| Profile Name        | Windows – Basic Security Configuration |
-| Platform            | Windows 10 and Windows 11              |
-| Management Solution | Microsoft Intune                       |
-| Assignment Scope    | All Intune-managed Windows devices     |
-
-## Configuration Settings
-
-### Authentication
-
-Windows Hello for Business is enabled to provide secure user authentication through a PIN-based sign-in method.
-
-| Setting                    | Configuration        |
-| -------------------------- | -------------------- |
-| Windows Hello for Business | Enabled              |
-| Minimum PIN Length         | 6 Digits             |
-| PIN Requirement            | Numeric PIN Required |
-
-### Device Encryption
-
-BitLocker Drive Encryption is enabled to protect data stored on corporate devices and reduce the risk of unauthorized access in the event of device loss or theft.
-
-| Setting              | Configuration      |
-| -------------------- | ------------------ |
-| BitLocker Encryption | Enabled            |
-| Recovery Key Backup  | Microsoft Entra ID |
-
-### Endpoint Protection
-
-Microsoft Defender Antivirus and Windows Firewall are enabled to provide baseline protection against malware, unauthorized access, and network-based threats.
-
-| Setting                      | Configuration |
-| ---------------------------- | ------------- |
-| Microsoft Defender Antivirus | Enabled       |
-| Windows Firewall             | Enabled       |
-
-### Operating System Updates
-
-Automatic Windows Updates are enabled to ensure devices receive security patches, quality updates, and feature improvements in a timely manner.
-
-| Setting                   | Configuration |
-| ------------------------- | ------------- |
-| Automatic Windows Updates | Enabled       |
-
-## Expected Outcome
-
-Implementation of this profile ensures that all managed Windows devices:
-
-* Utilize secure PIN-based authentication.
-* Maintain full disk encryption through BitLocker.
-* Store BitLocker recovery keys securely within Microsoft Entra ID.
-* Operate with Microsoft Defender Antivirus and Windows Firewall enabled.
-* Receive security updates and patches automatically.
-* Adhere to the organization's minimum endpoint security requirements.
-
-* ### Success Criteria
+### Success Criteria
 
 * 100% of corporate devices enrolled in Intune
 * Device ownership and compliance status visible to IT administrators
+
+---
+
+# Phase 2 – Baseline Security Controls
+## Objective
+
+Implement minimum security requirements across all managed devices.
+
+### Policies Implemented
+
+#### Compliance Policy
+
+* Require BitLocker encryption
+* Require Microsoft Defender Antivirus
+* Require Windows Firewall
+
+#### Device Configuration Profile
+
+* Enable Windows Hello for Business
+* Enforce minimum 6-digit PIN
+* Enable BitLocker encryption
+* Store BitLocker recovery keys in Microsoft Entra ID
+* Enable Microsoft Defender Antivirus
+* Enable Windows Firewall
+
+### Success Criteria
+
+* All managed devices encrypted
+* All users configured with Windows Hello PIN
+* Devices report as compliant within Intune
+
+---
+
+# Phase 3 – Conditional Access
+
+## Objective
+
+Restrict access to organizational resources from non-compliant or unmanaged devices.
+
+### Policies Implemented
+
+* Require compliant device for Microsoft 365 access
+* Block access from unmanaged devices
+* Require multifactor authentication (MFA)
+
+### Success Criteria
+
+* Corporate resources accessible only from compliant devices
+* MFA enabled for all users
+
+---
+
+# Phase 4 – Endpoint Protection
+
+## Objective
+
+Strengthen endpoint security and reduce exposure to threats.
+
+### Policies Implemented
+
+* Microsoft Defender Antivirus policies
+* Attack Surface Reduction (ASR) rules
+* Tamper Protection
+* Web content filtering
+* Endpoint detection and response (where licensed)
+
+### Success Criteria
+
+* Enhanced malware and ransomware protection
+* Reduced attack surface across endpoints
+---
+
+# Phase 5 – Update Management
+## Objective
+
+Ensure devices remain secure and supported through controlled update deployment.
+
+### Policies Implemented
+
+* Windows Update Rings
+* Feature Update Policies
+* Quality Update Policies
+
+### Success Criteria
+
+* Timely deployment of security updates
+* Reduced vulnerability exposure
+* Standardized operating system versions
+
+---
+# Phase 6 – Application Management
+
+## Objective
+
+Standardize and secure software deployment.
+
+### Policies Implemented
+
+* Corporate application deployment
+* Application update management
+* Removal of unauthorized software
+* Microsoft 365 application deployment
+
+### Success Criteria
+* Consistent software inventory
+* Reduced manual software installation effort
+
+---
+
+# Phase 7 – Advanced Security and Compliance
+
+## Objective
+Implement advanced controls to support organizational security and compliance requirements.
+
+### Policies Implemented
+
+* Device control policies (USB restrictions)
+* Data Loss Prevention (DLP)
+* Endpoint Privilege Management
+* Security baselines
+* Compliance reporting and auditing
+
+### Success Criteria
+
+* Improved protection of sensitive data
+* Enhanced compliance reporting capabilities
+* Reduced risk of data leakage
+---
+# Roadmap Timeline
+
+| Phase                                    | Timeline  |
+| ---------------------------------------- | --------- |
+| Phase 1 – Enrollment & Foundation        | Week 1    |
+| Phase 2 – Baseline Security Controls     | Week 1–2  |
+| Phase 3 – Conditional Access & MFA       | Week 2    |
+| Phase 4 – Endpoint Protection            | Week 3    |
+| Phase 5 – Update Management              | Week 3–4  |
+| Phase 6 – Application Management         | Month 2   |
+| Phase 7 – Advanced Security & Compliance | Month 2–3 |
+
+
+
+
+
+
+
+
+
+
+
 
 
