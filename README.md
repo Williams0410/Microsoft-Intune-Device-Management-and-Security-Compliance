@@ -93,8 +93,10 @@ Group Name: Windows-Managed-Devices
 Membership Type: Assigned
 ```
 
-Add all company-managed Windows devices to this group.
 
+
+<img width="1906" height="952" alt="image" src="https://github.com/user-attachments/assets/132c358b-fb55-47fe-94b7-db3fdf108991" />
+Add all company-managed Windows devices to this group.
 ---
 
 # Step 3: Create Windows Compliance Policy
@@ -112,31 +114,7 @@ Intune Admin Center
 ```text
 Windows 10 and later
 ```
-## Policy Name
 
-```text
-Windows Compliance Baseline
-```
-## Configuration
-### Device Health
-```text
-Require BitLocker = Yes
-```
-### Microsoft Defender (Recommended)
-```text
-Require Antivirus = Yes
-Require Real-time Protection = Yes
-```
-### System Security (Recommended)
-
-```text
-Require Secure Boot = Yes
-```
-Assign policy to:
-```text
-Windows-Managed-Devices
-```
----
 # Step 4: Create Windows Hello for Business PIN Policy
 
 Navigate to:
@@ -277,6 +255,9 @@ Verify the following:
 | Windows Hello PIN | Configured      |
 | BitLocker Status  | Enabled         |
 
+<img width="1904" height="959" alt="Screenshot 2026-06-05 143606" src="https://github.com/user-attachments/assets/40e6b216-1dd6-4180-b91d-e7be38385ab9" />
+
+
 ---
 # Security Baseline Summary
 
@@ -289,6 +270,11 @@ Verify the following:
 | Windows Firewall     | Yes      |
 | Automatic Updates    | Yes      |
 | Conditional Access   | Yes      |
+
+
+
+
+
 
 ---
 # Expected Outcome
