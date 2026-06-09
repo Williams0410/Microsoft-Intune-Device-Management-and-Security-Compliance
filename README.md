@@ -157,6 +157,8 @@ Assign policy to:
 Windows-Managed-Devices
 ```
 ---
+
+
 # Step 5: Create BitLocker Encryption Policy
 Navigate to:
 
@@ -451,8 +453,8 @@ Implement advanced controls to support organizational security and compliance re
 | Phase 3 – Conditional Access & MFA       | Week 2    |
 | Phase 4 – Endpoint Protection            | Week 3    |
 | Phase 5 – Update Management              | Week 3–4  |
-| Phase 6 – Application Management         | Month 2   |
-| Phase 7 – Advanced Security & Compliance | Month 2–3 |
+| Phase 6 – Advanced Security & Compliance | Month 2   |
+
 
 
 
